@@ -7,19 +7,12 @@ This project is an SDK implementation created for Sinch's Developer Experience a
 ## Features
 
 - **Contacts Management**: Create, update, retrieve, and delete contact information.
-- **Messaging**: Send and retrieve messages securely.
-- **Authentication Management**: Automatically manage and include authentication headers for all requests.
-- **Developer-Friendly Design**: Autocompletion-friendly methods to discover API parameters and methods without needing to refer to documentation.
-- **Error Handling**:  Extensive Logging for reliable debugging.
 - **Test Coverage**: Unit and integration tests to ensure functionality.
+- **Authentication Management**: Automatically manage and include authentication headers for all requests.
+- **Developer-Friendly Design**: Autocompletion-friendly methods to discover API parameters and methods.
+- **Error Handling**:  Extensive Logging for reliable debugging.
+- **Messaging**: Send and retrieve messages securely (with Webhook).
 - **Bonus Task: Webhooks**: Process webhook events with signature verification for secure communication.
-
----
-
-## Requirements
-
-### How This SDK Meets the Requirements:
-
 
 ---
 
@@ -56,7 +49,7 @@ export PYTHONPATH=YOUR_PATH/devexp-assessment:$PYTHONPATH
 python examples/run_example_contacts.py
 ```
 
-2. Create 2 contacts, Send a message, Menage webhook event (Bonus Task):
+2. Create two contacts, Send a message, and manage the webhook event (Bonus Task):
 ```python
 export PYTHONPATH=YOUR_PATH/devexp-assessment:$PYTHONPATH
 python examples/run_example_send_message_webhook.py
@@ -102,7 +95,7 @@ print(f"All contacts: {all_contacts}")
 
 ## Bonus Task: Webhook Implementation
 
-To meet the bonus task requirements, a webhook server was implemented. 
+A webhook server was implemented to meet the bonus task requirements. 
 The webhook server processes the API server notification by verifying the HMAC signature in the `Authorization` header and printing the event data.
 
 ### Webhook Server Key Features
@@ -116,11 +109,11 @@ The webhook server processes the API server notification by verifying the HMAC s
 ![Workflow Diagram](./docs/webhook_overflow.png "Workflow Overview")
 
  **Step 1. SDK Sends Request to API Server**  
-   - Developer uses the SDK to interact with the API (e.g., sending messages, creating contacts).  
-   - SDK handles authentication and constructs the HTTP request.
+   - The developer uses the SDK to interact with the API (e.g., sending messages and creating contacts).  
+   - SDK handles authentication and constructs HTTP requests.
 
  **Step 2. API Server Processes Request and Sends a Request**  
-   - Verifies the request and performs the action (e.g., queues messages).  
+   - Verifies the request and acts (e.g., queues messages).  
    - For messages, the server queues them and returns an initial status (`queued`).
    - Sends a POST request to the Webhook Server with message details and an HMAC signature for verification.
 
@@ -130,7 +123,7 @@ The webhook server processes the API server notification by verifying the HMAC s
 
 **Step 4. API Server Updates Message Status**  
    - If Webhook Server acknowledges: Updates status to `delivered`.  
-   - If failed or not acknowledged: Updates status to `failed`.
+   - If it fails or is not acknowledged, update the status to `failed.`
 
 ---
 
