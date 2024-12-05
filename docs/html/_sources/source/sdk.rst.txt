@@ -1,0 +1,37 @@
+sdk package
+===========
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   sdk.resources
+
+Submodules
+----------
+
+sdk.api\_client module
+----------------------
+
+.. automodule:: sdk.api_client
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+sdk.config module
+-----------------
+
+.. automodule:: sdk.config
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: sdk
+   :members:
+   :undoc-members:
+   :show-inheritance:

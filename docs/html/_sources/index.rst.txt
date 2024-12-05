@@ -1,0 +1,21 @@
+
+devexp-assessment documentation
+===============================
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   modules
+
+.. automodule:: sdk.resources.contacts
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. automodule:: sdk.resources.messages
+   :members:
+   :undoc-members:
+   :show-inheritance:
+

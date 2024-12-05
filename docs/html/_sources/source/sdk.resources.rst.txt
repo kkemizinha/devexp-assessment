@@ -1,0 +1,29 @@
+sdk.resources package
+=====================
+
+Submodules
+----------
+
+sdk.resources.contacts module
+-----------------------------
+
+.. automodule:: sdk.resources.contacts
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+sdk.resources.messages module
+-----------------------------
+
+.. automodule:: sdk.resources.messages
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: sdk.resources
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,29 @@
+resources package
+=================
+
+Submodules
+----------
+
+resources.contacts module
+-------------------------
+
+.. automodule:: resources.contacts
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+resources.messages module
+-------------------------
+
+.. automodule:: resources.messages
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contentsF
+---------------
+
+.. automodule:: resources
+   :members:
+   :undoc-members:
+   :show-inheritance:
