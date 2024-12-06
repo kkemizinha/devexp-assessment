@@ -40,7 +40,7 @@ This project is an SDK implementation created for Sinch's Developer Experience a
 
 ## SDK Usage
 
-**SDK Documentation**: `docs/html`
+**SDK Documentation**: `docs/html/index.html`
 
 **Examples on how to use it**: 
 1. Create, Update, List, and Delete contacts:
