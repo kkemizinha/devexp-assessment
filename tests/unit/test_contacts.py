@@ -102,28 +102,20 @@ class TestContacts(unittest.TestCase):
         """
         contact_id = "b8704130-5be8-4b5f-ba71-8f4da96ef5a8"
 
-        # Mock the responses for GET and PATCH requests
+        # Mock the response for PATCH request
         def mock_request(method, endpoint, json=None):
-            if method == "GET" and endpoint == f"contacts/{contact_id}":
-                return {"id": contact_id, "name": "Jane Smith", "phone": "+1234567890"}
             if method == "PATCH" and endpoint == f"contacts/{contact_id}":
                 return {"id": contact_id, "name": "Jane Smith", "phone": "+34612345678"}
             return None
 
         self.mock_client.request.side_effect = mock_request
 
-        # Fetch the existing contact
-        existing_contact = self.contacts.get_contact(contact_id)
-        self.assertEqual(existing_contact["id"], contact_id)
-        self.assertEqual(existing_contact["name"], "Jane Smith")
-        self.assertEqual(existing_contact["phone"], "+1234567890")
-
         # Update the contact's phone number
         updated_data = {"phone": "+34612345678"}
         updated_contact = self.contacts.update_contact(contact_id, phone=updated_data["phone"])
 
         # Verify the PATCH request
-        self.mock_client.request.assert_any_call(
+        self.mock_client.request.assert_called_once_with(
             "PATCH",
             f"contacts/{contact_id}",
             json=updated_data
@@ -133,7 +125,6 @@ class TestContacts(unittest.TestCase):
         self.assertEqual(updated_contact["id"], contact_id)
         self.assertEqual(updated_contact["name"], "Jane Smith")
         self.assertEqual(updated_contact["phone"], "+34612345678")
-
 
 if __name__ == "__main__":
     unittest.main()

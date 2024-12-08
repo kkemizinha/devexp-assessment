@@ -130,7 +130,7 @@ class Contacts:
         response = self.client.request("PATCH", endpoint, json=payload)
         return response
 
-    def delete_contact(self, contact_id: str) -> Dict[str, Union[str, bool]]:
+    def delete_contact(self, contact_id: str) -> Optional[Dict[str, Union[str, bool]]]:
         """
         Delete a contact by its ID.
 

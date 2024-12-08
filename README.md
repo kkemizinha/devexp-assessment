@@ -36,6 +36,11 @@ This project is an SDK implementation created for Sinch's Developer Experience a
    export PYTHONPATH=YOUR_PATH/devexp-assessment:$PYTHONPATH
    ```
 
+4. Execute the command to launch the servers in Docker:
+    ```bash
+     docker compose up
+    ```
+
 ---
 
 ## SDK Usage
